@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molecular Fingerprinting Platform | Project Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="app-layout">
+         <aside class="sidebar">
+ <div class="logo">
+ <i data-lucide="hexagon"></i>
+ <span>AlgoStrat</span>
+ </div>
+ 
+ <div class="nav-section-title">Overview</div>
+ <ul class="nav-list" style="margin-bottom: 32px;">
+ <a href="index.html" class="nav-item active"><i data-lucide="layout-dashboard" style="width: 16px;"></i> Dashboard</a>
+ <a href="overview/index.html" class="nav-item"><i data-lucide="info" style="width: 16px;"></i> Project Overview</a>
+ <a href="problem-motivation/index.html" class="nav-item"><i data-lucide="target" style="width: 16px;"></i> Context & Problem</a>
+ </ul>
+
+ <div class="nav-section-title">Technical</div>
+ <ul class="nav-list" style="margin-bottom: 32px;">
+ <a href="fingerprinting-method/index.html" class="nav-item"><i data-lucide="flask-conical" style="width: 16px;"></i> Method</a>
+ <a href="architecture/index.html" class="nav-item"><i data-lucide="server" style="width: 16px;"></i> Architecture</a>
+ <a href="pipeline-visualization/index.html" class="nav-item"><i data-lucide="git-merge" style="width: 16px;"></i> Pipeline Visual</a>
+ <a href="experiments/index.html" class="nav-item"><i data-lucide="bar-chart-2" style="width: 16px;"></i> Experiments</a>
+ </ul>
+ 
+ <div class="nav-section-title">Resources</div>
+ <ul class="nav-list">
+ <a href="demo/index.html" class="nav-item"><i data-lucide="play-circle" style="width: 16px;"></i> Demo</a>
+ <a href="presentations/index.html" class="nav-item"><i data-lucide="presentation" style="width: 16px;"></i> Presentations</a>
+ <a href="reports/index.html" class="nav-item"><i data-lucide="file-text" style="width: 16px;"></i> Reports</a>
+ <a href="roadmap/index.html" class="nav-item"><i data-lucide="map" style="width: 16px;"></i> Roadmap</a>
+ <a href="notes/index.html" class="nav-item"><i data-lucide="book-open" style="width: 16px;"></i> Notes</a>
+ </ul>
+ </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div class="header-meta">
+                    <span class="badge active">Research</span>
+                    <span class="timestamp">Last Updated:
+                        <script>document.write(new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) + ' ' + new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }))</script>
+                    </span>
+                </div>
+                <h1 class="project-title">Molecular Fingerprinting Platform</h1>
+                <p class="project-description">
+                    A scalable molecular fingerprinting platform built for fast similarity search, accurate
+                    representation, and advanced drug discovery workflows.
+                </p>
+            </header>
+
+            <div class="card-grid">
+
+                <!-- Overiew Card -->
+                <a href="overview/index.html" class="card" style="animation-delay: 0.1s;">
+                    <div class="card-header">
+                        <div class="card-icon"><i data-lucide="info"></i></div>
+                        <div class="card-tag">Foundation</div>
+                    </div>
+                    <h3 class="card-title">Project Overview</h3>
+                    <p class="card-desc">Concept, goals, and the high-level vision of the platform.</p>
+                    <div class="card-footer">
+                        <span class="card-date">Updated: Mar 8</span>
+                        <span class="card-action">Open <i data-lucide="arrow-right" style="width: 14px;"></i></span>
+                    </div>
+                </a>
+
+                <!-- Method Card -->
+                <a href="fingerprinting-method/index.html" class="card" style="animation-delay: 0.15s;">
+                    <div class="card-header">
+                        <div class="card-icon"><i data-lucide="flask-conical"></i></div>
+                        <div class="card-tag">Core Algorithm</div>
+                    </div>
+                    <h3 class="card-title">Fingerprinting Method</h3>
+                    <p class="card-desc">In-depth look at the algorithm, processing workflow, and representation
+                        structure.</p>
+                    <div class="card-footer">
+                        <span class="card-date">v1.2.0</span>
+                        <span class="card-action">Open <i data-lucide="arrow-right" style="width: 14px;"></i></span>
+                    </div>
+                </a>
+
+                <!-- Pipeline Card (The new one) -->
+                <a href="pipeline-visualization/index.html" class="card" style="animation-delay: 0.2s;">
+                    <div class="card-header">
+                        <div class="card-icon"><i data-lucide="git-merge"></i></div>
+                        <div class="card-tag">Interactive</div>
+                    </div>
+                    <h3 class="card-title">Pipeline Visualization</h3>
+                    <p class="card-desc">Animated flow diagram of SMILES to Ranked Results processing pipeline.</p>
+                    <div class="card-footer">
+                        <span class="card-date">Visual</span>
+                        <span class="card-action">Open <i data-lucide="arrow-right" style="width: 14px;"></i></span>
+                    </div>
+                </a>
+
+                <!-- System Arch Card -->
+                <a href="architecture/index.html" class="card" style="animation-delay: 0.25s;">
+                    <div class="card-header">
+                        <div class="card-icon"><i data-lucide="server"></i></div>
+                        <div class="card-tag">Engineering</div>
+                    </div>
+                    <h3 class="card-title">System Architecture</h3>
+                    <p class="card-desc">Cloud infrastructure, processing engine, and secure execution environment.</p>
+                    <div class="card-footer">
+                        <span class="card-date">Draft</span>
+                        <span class="card-action">Open <i data-lucide="arrow-right" style="width: 14px;"></i></span>
+                    </div>
+                </a>
+
+                <!-- Experiments Card -->
+                <a href="experiments/index.html" class="card" style="animation-delay: 0.3s;">
+                    <div class="card-header">
+                        <div class="card-icon"><i data-lucide="bar-chart-2"></i></div>
+                        <div class="card-tag">Validation</div>
+                    </div>
+                    <h3 class="card-title">Experiment Results</h3>
+                    <p class="card-desc">Performance metrics, accuracy charts, and validation datasets.</p>
+                    <div class="card-footer">
+                        <span class="card-date">Latest: Multi-node cluster run</span>
+                        <span class="card-action">Open <i data-lucide="arrow-right" style="width: 14px;"></i></span>
+                    </div>
+                </a>
+
+                <!-- Presentations Card -->
+                <a href="presentations/index.html" class="card" style="animation-delay: 0.35s;">
+                    <div class="card-header">
+                        <div class="card-icon"><i data-lucide="presentation"></i></div>
+                        <div class="card-tag">Assets</div>
+                    </div>
+                    <h3 class="card-title">Presentations</h3>
+                    <p class="card-desc">Slide decks and visual aids prepared for stakeholder meetings.</p>
+                    <div class="card-footer">
+                        <span class="card-date">3 items</span>
+                        <span class="card-action">Open <i data-lucide="arrow-right" style="width: 14px;"></i></span>
+                    </div>
+                </a>
+
+                <!-- Roadmap Card -->
+                <a href="roadmap/index.html" class="card" style="animation-delay: 0.4s;">
+                    <div class="card-header">
+                        <div class="card-icon"><i data-lucide="map"></i></div>
+                        <div class="card-tag">Planning</div>
+                    </div>
+                    <h3 class="card-title">Roadmap</h3>
+                    <p class="card-desc">Phased execution plan from research component to enterprise SaaS.</p>
+                    <div class="card-footer">
+                        <span class="card-date">Q2 2026</span>
+                        <span class="card-action">Open <i data-lucide="arrow-right" style="width: 14px;"></i></span>
+                    </div>
+                </a>
+
+                <!-- Notes Card -->
+                <a href="notes/index.html" class="card" style="animation-delay: 0.45s;">
+                    <div class="card-header">
+                        <div class="card-icon"><i data-lucide="book-open"></i></div>
+                        <div class="card-tag">Log</div>
+                    </div>
+                    <h3 class="card-title">Meeting Notes</h3>
+                    <p class="card-desc">Chronological log of internal discussions, decisions, and weekly updates.</p>
+                    <div class="card-footer">
+                        <span class="card-date">Updated: Mar 6</span>
+                        <span class="card-action">Open <i data-lucide="arrow-right" style="width: 14px;"></i></span>
+                    </div>
+                </a>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

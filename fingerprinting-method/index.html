@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fingerprinting Method | AlgoStrat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <div class="app-layout">
+         <aside class="sidebar">
+ <div class="logo">
+ <i data-lucide="hexagon"></i>
+ <span>AlgoStrat</span>
+ </div>
+ 
+ <div class="nav-section-title">Overview</div>
+ <ul class="nav-list" style="margin-bottom: 32px;">
+ <a href="../index.html" class="nav-item"><i data-lucide="layout-dashboard" style="width: 16px;"></i> Dashboard</a>
+ <a href="../overview/index.html" class="nav-item"><i data-lucide="info" style="width: 16px;"></i> Project Overview</a>
+ <a href="../problem-motivation/index.html" class="nav-item"><i data-lucide="target" style="width: 16px;"></i> Context & Problem</a>
+ </ul>
+
+ <div class="nav-section-title">Technical</div>
+ <ul class="nav-list" style="margin-bottom: 32px;">
+ <a href="../fingerprinting-method/index.html" class="nav-item active"><i data-lucide="flask-conical" style="width: 16px;"></i> Method</a>
+ <a href="../architecture/index.html" class="nav-item"><i data-lucide="server" style="width: 16px;"></i> Architecture</a>
+ <a href="../pipeline-visualization/index.html" class="nav-item"><i data-lucide="git-merge" style="width: 16px;"></i> Pipeline Visual</a>
+ <a href="../experiments/index.html" class="nav-item"><i data-lucide="bar-chart-2" style="width: 16px;"></i> Experiments</a>
+ </ul>
+ 
+ <div class="nav-section-title">Resources</div>
+ <ul class="nav-list">
+ <a href="../demo/index.html" class="nav-item"><i data-lucide="play-circle" style="width: 16px;"></i> Demo</a>
+ <a href="../presentations/index.html" class="nav-item"><i data-lucide="presentation" style="width: 16px;"></i> Presentations</a>
+ <a href="../reports/index.html" class="nav-item"><i data-lucide="file-text" style="width: 16px;"></i> Reports</a>
+ <a href="../roadmap/index.html" class="nav-item"><i data-lucide="map" style="width: 16px;"></i> Roadmap</a>
+ <a href="../notes/index.html" class="nav-item"><i data-lucide="book-open" style="width: 16px;"></i> Notes</a>
+ </ul>
+ </aside>
+        <main class="main-content">
+            <div class="page-container">
+                <a href="../index.html" class="back-link"><i data-lucide="arrow-left" style="width: 16px;"></i> Back to
+                    Dashboard</a>
+                <header class="page-header">
+                    <h1 class="page-title">Fingerprinting Method</h1>
+                    <p class="project-description">Topological hashing into 2048 arrays.</p>
+                </header>
+                <div class="page-content">
+                    <p style="margin-bottom: 24px;">Our proprietary method uses Morgan/MACCS style bitwise operations
+                        but drastically optimized for scale cache hits.</p>
+                    <div
+                        style="background: var(--bg-hover); padding: 16px 24px; border: 1px solid var(--border-color); border-radius: var(--radius-lg); font-family: var(--font-mono); font-size: 13px; margin-bottom: 32px; color: var(--text-primary);">
+                        <span style="color: var(--text-muted)"># SMILES Input</span><br>c1ccccc1NC(=O)C<br><br><span
+                            style="color: var(--text-muted)"># Output String (2048 Bit Representation -
+                            Shortened)</span><br>010000001000...</div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document Viewer | AlgoStrat</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Specific viewer styles to maintain cleanliness */
+        .viewer-container {
+            width: 100%;
+            height: calc(100vh - 200px);
+            /* Fill remaining space minus header */
+            background: var(--bg-hover);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            display: flex;
+            position: relative;
+        }
+
+        .pdf-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .markdown-wrapper {
+            padding: 40px;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            color: var(--text-secondary);
+            background: var(--bg-card);
+        }
+
+        /* Essential Markdown Styles */
+        .markdown-body {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .markdown-body h1,
+        .markdown-body h2,
+        .markdown-body h3 {
+            color: var(--text-primary);
+            margin-top: 24px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .markdown-body h1 {
+            font-size: 28px;
+        }
+
+        .markdown-body h2 {
+            font-size: 22px;
+        }
+
+        .markdown-body h3 {
+            border: none;
+            font-size: 18px;
+        }
+
+        .markdown-body p {
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .markdown-body code {
+            background: var(--bg-base);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: 13px;
+        }
+
+        .markdown-body pre {
+            background: var(--bg-base);
+            padding: 16px;
+            border-radius: var(--radius-md);
+            overflow-x: auto;
+            margin-bottom: 16px;
+            border: 1px solid var(--border-color);
+        }
+
+        .markdown-body ul,
+        .markdown-body ol {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+
+        .markdown-body blockquote {
+            border-left: 4px solid var(--border-active);
+            padding-left: 16px;
+            margin-left: 0;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .loading-state {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-muted);
+        }
+
+        .spinner {
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-layout">
+
+        <aside class="sidebar">
+            <div class="logo">
+                <i data-lucide="hexagon"></i>
+                <span>AlgoStrat</span>
+            </div>
+
+            <div class="nav-section-title">Overview</div>
+            <ul class="nav-list" style="margin-bottom: 32px;">
+                <a href="index.html" class="nav-item"><i data-lucide="layout-dashboard" style="width: 16px;"></i>
+                    Dashboard</a>
+                <a href="overview/index.html" class="nav-item"><i data-lucide="info" style="width: 16px;"></i> Project
+                    Overview</a>
+                <a href="problem-motivation/index.html" class="nav-item"><i data-lucide="target"
+                        style="width: 16px;"></i> Context & Problem</a>
+            </ul>
+
+            <div class="nav-section-title">Technical</div>
+            <ul class="nav-list" style="margin-bottom: 32px;">
+                <a href="fingerprinting-method/index.html" class="nav-item"><i data-lucide="flask-conical"
+                        style="width: 16px;"></i> Method</a>
+                <a href="architecture/index.html" class="nav-item"><i data-lucide="server" style="width: 16px;"></i>
+                    Architecture</a>
+                <a href="pipeline-visualization/index.html" class="nav-item"><i data-lucide="git-merge"
+                        style="width: 16px;"></i> Pipeline Visual</a>
+                <a href="experiments/index.html" class="nav-item"><i data-lucide="bar-chart-2" style="width: 16px;"></i>
+                    Experiments</a>
+            </ul>
+
+            <div class="nav-section-title">Resources</div>
+            <ul class="nav-list">
+                <a href="demo/index.html" class="nav-item"><i data-lucide="play-circle" style="width: 16px;"></i>
+                    Demo</a>
+                <a href="presentations/index.html" class="nav-item"><i data-lucide="presentation"
+                        style="width: 16px;"></i> Presentations</a>
+                <a href="reports/index.html" class="nav-item"><i data-lucide="file-text" style="width: 16px;"></i>
+                    Reports</a>
+                <a href="roadmap/index.html" class="nav-item"><i data-lucide="map" style="width: 16px;"></i> Roadmap</a>
+                <a href="notes/index.html" class="nav-item"><i data-lucide="book-open" style="width: 16px;"></i>
+                    Notes</a>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div style="max-width: 1000px; width: 100%;">
+
+                <a href="javascript:history.back()" class="back-link"
+                    style="margin-bottom: 24px; display: inline-flex;">
+                    <i data-lucide="arrow-left" style="width: 16px;"></i> Go Back
+                </a>
+
+                <header class="page-header" style="margin-bottom: 24px; padding-bottom: 16px;">
+                    <h1 class="page-title" id="doc-title">Loading Document...</h1>
+                    <p class="project-description" id="doc-desc">Rendering viewer</p>
+                </header>
+
+                <div class="viewer-container" id="viewer-box">
+                    <div class="loading-state" id="loading">
+                        <i data-lucide="loader-2" class="spinner" style="width: 32px; height: 32px;"></i>
+                        <span>Loading Content...</span>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // Parse URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const fileUrl = urlParams.get('file');
+        const titleText = urlParams.get('title') || 'Document Viewer';
+        const typeParam = urlParams.get('type');
+
+        // Update headers
+        document.getElementById('doc-title').textContent = titleText;
+        document.title = titleText + " | AlgoStrat";
+        document.getElementById('doc-desc').textContent = fileUrl ? `Source: ${fileUrl}` : "No file specified.";
+
+        const viewerBox = document.getElementById('viewer-box');
+        const loader = document.getElementById('loading');
+
+        if (!fileUrl) {
+            loader.innerHTML = `<i data-lucide="alert-circle" style="width: 32px; height: 32px; color: var(--primary-red);"></i><span>No file provided in URL.</span>`;
+            lucide.createIcons();
+        } else {
+            // Determine type
+            const isPdf = typeParam === 'pdf' || fileUrl.toLowerCase().endsWith('.pdf');
+            const isMd = typeParam === 'md' || fileUrl.toLowerCase().endsWith('.md');
+
+            if (isPdf) {
+                // Render PDF Native viewer
+                const iframe = document.createElement('iframe');
+                iframe.src = fileUrl;
+                iframe.className = 'pdf-frame';
+                iframe.onload = () => loader.style.display = 'none';
+
+                viewerBox.appendChild(iframe);
+            }
+            else if (isMd) {
+                // Fetch and render Markdown
+                fetch(fileUrl)
+                    .then(response => {
+                        if (!response.ok) throw new Error("File not found or CORS blocked");
+                        return response.text();
+                    })
+                    .then(text => {
+                        loader.style.display = 'none';
+                        const mdWrapper = document.createElement('div');
+                        mdWrapper.className = 'markdown-wrapper';
+
+                        const mdBody = document.createElement('div');
+                        mdBody.className = 'markdown-body';
+                        mdBody.innerHTML = marked.parse(text);
+
+                        mdWrapper.appendChild(mdBody);
+                        viewerBox.appendChild(mdWrapper);
+
+                        // Setup any icons that might be rendered in the markdown text
+                        lucide.createIcons();
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        loader.innerHTML = `
+                            <i data-lucide="alert-triangle" style="width: 32px; height: 32px; color: var(--text-secondary);"></i>
+                            <span>Unable to load Markdown file.</span>
+                            <span style="font-size: 12px; max-width: 300px; text-align: center;">If you are opening this locally (file://), your browser's CORS policy may block loading local text files. Try running a local server (e.g. <code>python3 -m http.server</code>).</span>
+                        `;
+                        lucide.createIcons();
+                    });
+            } else {
+                loader.innerHTML = `<i data-lucide="file-unknown" style="width: 32px; height: 32px;"></i><span>Unsupported file type. Needs .pdf or .md</span>`;
+                lucide.createIcons();
+            }
+        }
+    </script>
+</body>
+
+</html>

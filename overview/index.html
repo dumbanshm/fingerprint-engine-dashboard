@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Overview | Molecular Fingerprinting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <div class="app-layout">
+         <aside class="sidebar">
+ <div class="logo">
+ <i data-lucide="hexagon"></i>
+ <span>AlgoStrat</span>
+ </div>
+ 
+ <div class="nav-section-title">Overview</div>
+ <ul class="nav-list" style="margin-bottom: 32px;">
+ <a href="../index.html" class="nav-item"><i data-lucide="layout-dashboard" style="width: 16px;"></i> Dashboard</a>
+ <a href="../overview/index.html" class="nav-item active"><i data-lucide="info" style="width: 16px;"></i> Project Overview</a>
+ <a href="../problem-motivation/index.html" class="nav-item"><i data-lucide="target" style="width: 16px;"></i> Context & Problem</a>
+ </ul>
+
+ <div class="nav-section-title">Technical</div>
+ <ul class="nav-list" style="margin-bottom: 32px;">
+ <a href="../fingerprinting-method/index.html" class="nav-item"><i data-lucide="flask-conical" style="width: 16px;"></i> Method</a>
+ <a href="../architecture/index.html" class="nav-item"><i data-lucide="server" style="width: 16px;"></i> Architecture</a>
+ <a href="../pipeline-visualization/index.html" class="nav-item"><i data-lucide="git-merge" style="width: 16px;"></i> Pipeline Visual</a>
+ <a href="../experiments/index.html" class="nav-item"><i data-lucide="bar-chart-2" style="width: 16px;"></i> Experiments</a>
+ </ul>
+ 
+ <div class="nav-section-title">Resources</div>
+ <ul class="nav-list">
+ <a href="../demo/index.html" class="nav-item"><i data-lucide="play-circle" style="width: 16px;"></i> Demo</a>
+ <a href="../presentations/index.html" class="nav-item"><i data-lucide="presentation" style="width: 16px;"></i> Presentations</a>
+ <a href="../reports/index.html" class="nav-item"><i data-lucide="file-text" style="width: 16px;"></i> Reports</a>
+ <a href="../roadmap/index.html" class="nav-item"><i data-lucide="map" style="width: 16px;"></i> Roadmap</a>
+ <a href="../notes/index.html" class="nav-item"><i data-lucide="book-open" style="width: 16px;"></i> Notes</a>
+ </ul>
+ </aside>
+        <main class="main-content">
+            <div class="page-container">
+                <a href="../index.html" class="back-link"><i data-lucide="arrow-left" style="width: 16px;"></i> Back to
+                    Dashboard</a>
+                <header class="page-header">
+                    <h1 class="page-title">Project Overview</h1>
+                    <p class="project-description">Mission, goals, and the vision of the Molecular Fingerprinting
+                        engine.</p>
+                </header>
+                <div class="page-content">
+                    <h3 style="margin-bottom: 16px;">Our Mission</h3>
+                    <p style="margin-bottom: 32px;">To create the fastest, most scalable cheminformatics algorithm for
+                        processing SMILES into functional topological representations to aid the modern drug discovery
+                        pipeline in Tier-2/Tier-3 labs first.</p>
+                    <h3 style="margin-bottom: 16px;">The Value Prop</h3>
+                    <ul
+                        style="list-style-position: inside; margin-bottom: 32px; padding-left: 12px; opacity: 0.8; display: flex; flex-direction: column; gap: 8px;">
+                        <li>Blazing fast Tanimoto similarity search on 1024-bit arrays.</li>
+                        <li>Zero-knowledge deployment with data deletion policies instantly after API execution.</li>
+                        <li>Accessible tokens for academia scaling vertically to Enterprise Docker drops.</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

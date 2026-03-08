@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipeline Visualization | Molecular Fingerprinting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <div class="app-layout">
+         <aside class="sidebar">
+ <div class="logo">
+ <i data-lucide="hexagon"></i>
+ <span>AlgoStrat</span>
+ </div>
+ 
+ <div class="nav-section-title">Overview</div>
+ <ul class="nav-list" style="margin-bottom: 32px;">
+ <a href="../index.html" class="nav-item"><i data-lucide="layout-dashboard" style="width: 16px;"></i> Dashboard</a>
+ <a href="../overview/index.html" class="nav-item"><i data-lucide="info" style="width: 16px;"></i> Project Overview</a>
+ <a href="../problem-motivation/index.html" class="nav-item"><i data-lucide="target" style="width: 16px;"></i> Context & Problem</a>
+ </ul>
+
+ <div class="nav-section-title">Technical</div>
+ <ul class="nav-list" style="margin-bottom: 32px;">
+ <a href="../fingerprinting-method/index.html" class="nav-item"><i data-lucide="flask-conical" style="width: 16px;"></i> Method</a>
+ <a href="../architecture/index.html" class="nav-item"><i data-lucide="server" style="width: 16px;"></i> Architecture</a>
+ <a href="../pipeline-visualization/index.html" class="nav-item active"><i data-lucide="git-merge" style="width: 16px;"></i> Pipeline Visual</a>
+ <a href="../experiments/index.html" class="nav-item"><i data-lucide="bar-chart-2" style="width: 16px;"></i> Experiments</a>
+ </ul>
+ 
+ <div class="nav-section-title">Resources</div>
+ <ul class="nav-list">
+ <a href="../demo/index.html" class="nav-item"><i data-lucide="play-circle" style="width: 16px;"></i> Demo</a>
+ <a href="../presentations/index.html" class="nav-item"><i data-lucide="presentation" style="width: 16px;"></i> Presentations</a>
+ <a href="../reports/index.html" class="nav-item"><i data-lucide="file-text" style="width: 16px;"></i> Reports</a>
+ <a href="../roadmap/index.html" class="nav-item"><i data-lucide="map" style="width: 16px;"></i> Roadmap</a>
+ <a href="../notes/index.html" class="nav-item"><i data-lucide="book-open" style="width: 16px;"></i> Notes</a>
+ </ul>
+ </aside>
+
+        <main class="main-content">
+            <div class="page-container">
+
+                <a href="../index.html" class="back-link">
+                    <i data-lucide="arrow-left" style="width: 16px;"></i> Back to Dashboard
+                </a>
+
+                <header class="page-header">
+                    <h1 class="page-title">Pipeline Visualization</h1>
+                    <p class="project-description">End-to-end data flow from input configuration to actionable results.
+                    </p>
+                </header>
+
+                <div class="page-content">
+                    <div class="pipeline-container">
+                        <!-- Node 1 -->
+                        <div class="pipeline-node">
+                            <i data-lucide="file-code" class="pipeline-icon" style="width: 32px; height: 32px;"></i>
+                            <div class="pipeline-title">SMILES Input</div>
+                            <div class="pipeline-desc">Raw text representation or batch .csv/.smi file ingestion</div>
+                        </div>
+
+                        <div class="pipeline-arrow"><i data-lucide="arrow-down"></i></div>
+
+                        <!-- Node 2 -->
+                        <div class="pipeline-node">
+                            <i data-lucide="cpu" class="pipeline-icon" style="width: 32px; height: 32px;"></i>
+                            <div class="pipeline-title">Molecule Parser</div>
+                            <div class="pipeline-desc">Structure validation, sanitization, and 2D/3D coordinate
+                                generation via RDKit</div>
+                        </div>
+
+                        <div class="pipeline-arrow"><i data-lucide="arrow-down"></i></div>
+
+                        <!-- Node 3 -->
+                        <div class="pipeline-node">
+                            <i data-lucide="fingerprint" class="pipeline-icon" style="width: 32px; height: 32px;"></i>
+                            <div class="pipeline-title">Fingerprint Generator</div>
+                            <div class="pipeline-desc">Morgan/MACCS topological hashing into core engine</div>
+                        </div>
+
+                        <div class="pipeline-arrow"><i data-lucide="arrow-down"></i></div>
+
+                        <!-- Node 4 -->
+                        <div class="pipeline-node">
+                            <i data-lucide="binary" class="pipeline-icon" style="width: 32px; height: 32px;"></i>
+                            <div class="pipeline-title">Vector Representation</div>
+                            <div class="pipeline-desc">Fixed-length bit arrays (e.g. 1024 / 2048 dims) constructed for
+                                RAM</div>
+                        </div>
+
+                        <div class="pipeline-arrow"><i data-lucide="arrow-down"></i></div>
+
+                        <!-- Node 5 -->
+                        <div class="pipeline-node">
+                            <i data-lucide="search" class="pipeline-icon" style="width: 32px; height: 32px;"></i>
+                            <div class="pipeline-title">Similarity Search</div>
+                            <div class="pipeline-desc">Tanimoto indexing vs standard chemical databases across scalable
+                                cloud workers</div>
+                        </div>
+
+                        <div class="pipeline-arrow"><i data-lucide="arrow-down"></i></div>
+
+                        <!-- Node 6 -->
+                        <div class="pipeline-node" style="border-color: var(--accent-color);">
+                            <i data-lucide="list-checks" class="pipeline-icon"
+                                style="width: 32px; height: 32px; color: var(--accent-color);"></i>
+                            <div class="pipeline-title">Ranked Results</div>
+                            <div class="pipeline-desc text-white">JSON payload immediately dispatched out of the API.
+                                Compute securely discarded.</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

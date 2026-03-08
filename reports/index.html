@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Reports</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="logo">
+                <i data-lucide="hexagon"></i>
+                <span>AlgoStrat</span>
+            </div>
+
+            <div class="nav-section-title">Overview</div>
+            <ul class="nav-list" style="margin-bottom: 32px;">
+                <a href="../index.html" class="nav-item"><i data-lucide="layout-dashboard" style="width: 16px;"></i>
+                    Dashboard</a>
+                <a href="../overview/index.html" class="nav-item"><i data-lucide="info" style="width: 16px;"></i>
+                    Project Overview</a>
+                <a href="../problem-motivation/index.html" class="nav-item"><i data-lucide="target"
+                        style="width: 16px;"></i> Context & Problem</a>
+            </ul>
+
+            <div class="nav-section-title">Technical</div>
+            <ul class="nav-list" style="margin-bottom: 32px;">
+                <a href="../fingerprinting-method/index.html" class="nav-item"><i data-lucide="flask-conical"
+                        style="width: 16px;"></i> Method</a>
+                <a href="../architecture/index.html" class="nav-item"><i data-lucide="server" style="width: 16px;"></i>
+                    Architecture</a>
+                <a href="../pipeline-visualization/index.html" class="nav-item"><i data-lucide="git-merge"
+                        style="width: 16px;"></i> Pipeline Visual</a>
+                <a href="../experiments/index.html" class="nav-item"><i data-lucide="bar-chart-2"
+                        style="width: 16px;"></i> Experiments</a>
+            </ul>
+
+            <div class="nav-section-title">Resources</div>
+            <ul class="nav-list">
+                <a href="../demo/index.html" class="nav-item"><i data-lucide="play-circle" style="width: 16px;"></i>
+                    Demo</a>
+                <a href="../presentations/index.html" class="nav-item"><i data-lucide="presentation"
+                        style="width: 16px;"></i> Presentations</a>
+                <a href="../reports/index.html" class="nav-item active"><i data-lucide="file-text"
+                        style="width: 16px;"></i> Reports</a>
+                <a href="../roadmap/index.html" class="nav-item"><i data-lucide="map" style="width: 16px;"></i>
+                    Roadmap</a>
+                <a href="../notes/index.html" class="nav-item"><i data-lucide="book-open" style="width: 16px;"></i>
+                    Notes</a>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <div class="page-container">
+                <header class="page-header" style="margin-bottom: 32px; padding-bottom: 24px;">
+                    <h1 class="page-title">Technical Reports</h1>
+                    <p class="project-description">In-depth markdown findings and research notes dynamically rendered.
+                    </p>
+                </header>
+                <div class="page-content">
+
+                    <a href="../viewer.html?file=reports/sample.md&title=Sprint 2 Technical Report"
+                        style="display: flex; align-items: center; gap: 16px; background: var(--bg-hover); padding: 16px 24px; border: 1px solid rgba(255,255,255,0.05); border-radius: var(--radius-lg); margin-bottom: 16px; transition: var(--transition);">
+                        <div style="background: rgba(255,255,255,0.05); padding: 12px; border-radius: 8px;">
+                            <i data-lucide="file-text"
+                                style="width: 24px; height: 24px; color: var(--accent-color);"></i>
+                        </div>
+                        <div>
+                            <div
+                                style="font-weight: 500; font-size: 16px; color: var(--text-primary); margin-bottom: 4px;">
+                                Sprint 2 Technical Report</div>
+                            <div style="font-size: 13px; color: var(--text-secondary);">Algorithm optimization &
+                                popcount improvements. (.md)</div>
+                        </div>
+                        <i data-lucide="arrow-right"
+                            style="margin-left: auto; width: 16px; color: var(--text-muted);"></i>
+                    </a>
+
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>
